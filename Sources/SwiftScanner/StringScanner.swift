@@ -710,12 +710,13 @@ public class StringScanner {
 		
 		// execute the real code into block
 		try block(&sessionPosition,&sessionConsumed)
+            
+        var result: String? = ""
 		
 		if sessionConsumed == 0 {
-			return (sessionPosition,nil)
+			return (sessionPosition, result)
 		}
 			
-		var result: String? = nil
 		if accumulate == true {
 			result = ""
 			result!.reserveCapacity( (sessionConsumed - initialConsumed) ) // just an optimization
