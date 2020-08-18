@@ -289,7 +289,7 @@ public class StringScanner {
 	/// - Returns: accumulated string
 	@discardableResult
 	public func scan(untilTrue test: ((UnicodeScalar) -> (Bool)) ) -> String {
-		return self.move(peek: false, accumulate: true, untilTrue: test).string!
+		return self.move(peek: false, accumulate: true, untilTrue: test).string ?? ""
 	}
 	
 	/// Read next length characters and accumulate it
